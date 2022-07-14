@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="msg">Use arrow key or 'w' = up, 'a' = left, 's' = down, 'd' = right</div>
+    <div id="box" class="container">
+        <div id="fruit" class="fruit"></div>
+        <div id="snake" class="snake"></div>
+        <div class="snakeTailBox"></div>
+    </div>
+
+    <div class="inputBox">
+        <input class="inputKey" onclick="setDir('w')" type="button" value="&uarr;">
+        <div class="leftRightKeys">
+            <input class="inputKey" onclick="setDir('a')" type="button" value="&larr;">
+            <input class="inputKey" onclick="setDir('x')" type="button" value="stop">
+            <input class="inputKey" onclick="setDir('d')" type="button" value="&rarr;">
+        </div>
+        <input class="inputKey" onclick="setDir('s')" type="button" value="&darr;">
+    </div>
+
+    <div class="restartKey">
+        <input type="button" id="restartBtn" onclick="resetValues()" value="Restart">
+        <!-- <input type="range" name="snakeSpeed" id="speed"> -->
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
+
