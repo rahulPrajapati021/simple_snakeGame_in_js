@@ -2,46 +2,46 @@
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+} /* yeah resetting the values*/
 
-.container {
+.container { /* main container or display css*/
     width: 300px;
     height: 300px;
     border: 1px solid black;
-    position: relative;
-    margin: auto;
+    position: relative; /* cause the child element will be absolute*/
+    margin: auto; /*i know how to center the div i am a fucking genius, what do you mean its not centered vertically*/
 }
 
-#snake {
-    min-width: 10px;
-    min-height: 10px;
+#snake { /*yeah i dont use selectors in organized way*/ 
+    width: 10px; /*most of the element and movement will be of 10px*/
+    height: 10px;
     background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 1;
+    border-radius: 50%; /*yeah i thought it will look good*/ 
+    position: absolute; /*obvious it will move cause its position is absolute*/
+    z-index: 1;  /*when snake ate the tail the tail has greater z index so added it up*/
 }
 
 .snakeTail {
     width: 10px;
     height: 10px;
-    background-color: green;
+    background-color: green; /*this is the only difference between #snake and .snakeTail*/
     position: absolute;
     border-radius: 50%;
 }
 
 .fruit {
-    width: 8px;
+    width: 8px;/*rest 2px will be added with border, balanced as all things should be*/
     height: 8px;
-    animation-name: fruitAnimation;
+    animation-name: fruitAnimation; /*it looks good*/
     animation-duration: .3s;
     animation-iteration-count: infinite;
     position: absolute;
     border-radius: 50%;
 }
 
-@keyframes fruitAnimation {
+@keyframes fruitAnimation {/* creativity stocks down*/
     from {
-        background-color: turquoise;
+        background-color: turquoise; 
         border: 2px solid red;
     }
     to {
@@ -51,22 +51,22 @@
 }
 
 
-.inputBox {
+.inputBox { /*who said i cant center div easily see...*/
     width: 75%;
     margin: 50px auto;
-    display: flex;
+    display: flex; /*im lucky i have you */
     flex-direction: column;
     align-items: center;
 }
 
-.inputKey {
+.inputKey { /*haye me to tak gayi, i dont think these need any comment*/
     width: 50px;
     height: 50px;
     margin: 10px;
     padding: 10px;
 }
 
-#msg {
+#msg { /*yeah msg are very usefull so i colored them red*/
     color: red;
     font-size: 1.2rem;
     text-align: center;
