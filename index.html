@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <div id="msg">Use arrow key or 'w' = up, 'a' = left, 's' = down, 'd' = right</div> <!-- all the msg will we displayed in this -->
-    <div id="box" class="container"> <!-- the main container aur display of game -->
-        <div id="fruit" class="fruit"></div> <!--fruit element, yeah great comment-->
-        <div id="snake" class="snake"></div> <!--snake element, huh-->
-        <div class="snakeTailBox"></div> <!-- yeah this one is important cause all the tail element will be inside of this block -->
-        <!-- first i was thinking to add tail inside snake element or else in the main container but it was causing bug so added snakeTailBox-->
+    <div id="msgBox">
+        <button onclick="removeMsg()">X</button>
+        <p id="msg">
+        Use arrow key or 'w' = up, 'a' = left, 's' = down, 'd' = right
+        </p>
     </div>
-
-    <div class="inputBox"> <!-- so the input are simple w a s d and x, if someone playes on smartphone then these button will be helpful -->
-        <input class="inputKey" onclick="setDir('w')" type="button" value="&uarr;"> 
-        <div class="leftRightKeys"> <!-- these three are in different div because of display flex-->
-            <input class="inputKey" onclick="setDir('a')" type="button" value="&larr;">
-            <input class="inputKey" onclick="setDir('x')" type="button" value="stop">
-            <input class="inputKey" onclick="setDir('d')" type="button" value="&rarr;">
+    <div class="newBox">
+        <div class="container_1">
+            <div id="box" class="container">
+                <div id="fruit" class="fruit"></div>
+                <div id="snake" class="snake"></div>
+                <div class="snakeTailBox"></div>
+            </div>
         </div>
-        <input class="inputKey" onclick="setDir('s')" type="button" value="&darr;">
+        <div class="inputBox">
+            <div class="leftRightKeys">
+                <input class="inputKey" id="a_btn" onclick="setDir('a')" type="button" value="&larr;">
+                <input class="inputKey" id="d_btn" onclick="setDir('d')" type="button" value="&rarr;">
+            </div>
+            <div class="upDownKeys">
+                <input class="inputKey" id="w_btn" onclick="setDir('w')" type="button" value="&uarr;">
+                <input class="inputKey" id="s_btn" onclick="setDir('s')" type="button" value="&darr;">
+            </div>
+        </div>
+    </div>
+    <div class="scoreBox">
+        score <span id="scoreBoard">0</span>
+        <!-- <input type="range" name="snakeSpeed" id="speed"> -->
     </div>
 
-    <div class="restartKey">
-        <input type="button" id="restartBtn" onclick="resetValues()" value="Restart"> <!-- yeah u understood right this button reset the game, reset all the values -->
-        <!-- <input type="range" name="snakeSpeed" id="speed"> --> <!-- it will be available in update soon -->
-    </div>
+
+
 </body>
-<script src="script.js"></script>
-</html>
+<script src="./script.js"></script>
 
+</html>
