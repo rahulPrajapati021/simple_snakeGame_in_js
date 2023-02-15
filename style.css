@@ -1,49 +1,66 @@
+  @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-} /* yeah resetting the values*/
-
-.container { /* main container or display css*/
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
-    position: relative; /* cause the child element will be absolute*/
-    margin: auto; /*i know how to center the div i am a fucking genius, what do you mean its not centered vertically*/
+    font-family: 'Handlee', cursive;
 }
 
-#snake { /*yeah i dont use selectors in organized way*/ 
-    width: 10px; /*most of the element and movement will be of 10px*/
-    height: 10px;
+body {
+    background-color: #120E43;
+}
+
+.container {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #33b81f;
+    box-shadow: 1px 2px 6px #3dbe29d5;
+    position: relative;
+    margin: auto;
+    background-color: #6EC72D;
+}
+.container_1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#snake {
+    min-width: 10px;
+    min-height: 10px;
     background-color: red;
-    border-radius: 50%; /*yeah i thought it will look good*/ 
-    position: absolute; /*obvious it will move cause its position is absolute*/
-    z-index: 1;  /*when snake ate the tail the tail has greater z index so added it up*/
+    border-radius: 3px;
+    position: absolute;
+    z-index: 1;
+    transition: all .1s ease;
 }
 
 .snakeTail {
     width: 10px;
     height: 10px;
-    background-color: green; /*this is the only difference between #snake and .snakeTail*/
+    background-color: green;
     position: absolute;
-    border-radius: 50%;
+    border-radius: 3px;
+    transition: all .1s ease;
 }
 
 .fruit {
-    width: 8px;/*rest 2px will be added with border, balanced as all things should be*/
+    width: 8px;
     height: 8px;
-    animation-name: fruitAnimation; /*it looks good*/
-    animation-duration: .3s;
+    animation-name: fruitAnimation;
+    animation-duration: .5s;
     animation-iteration-count: infinite;
     position: absolute;
     border-radius: 50%;
+    transition: all .1s ease;
 }
 
-@keyframes fruitAnimation {/* creativity stocks down*/
+@keyframes fruitAnimation {
     from {
-        background-color: turquoise; 
+        background-color: turquoise;
         border: 2px solid red;
     }
+
     to {
         background-color: red;
         border: 2px solid turquoise;
@@ -51,24 +68,107 @@
 }
 
 
-.inputBox { /*who said i cant center div easily see...*/
-    width: 75%;
-    margin: 50px auto;
-    display: flex; /*im lucky i have you */
-    flex-direction: column;
-    align-items: center;
-}
 
-.inputKey { /*haye me to tak gayi, i dont think these need any comment*/
-    width: 50px;
-    height: 50px;
-    margin: 10px;
+.inputKey {
+    background-color: #383CC1;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
     padding: 10px;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    border: 1px solid royalblue;
+    margin: 15px;
 }
 
-#msg { /*yeah msg are very usefull so i colored them red*/
-    color: red;
-    font-size: 1.2rem;
+.inputKey:hover {
+    background-color: rgb(0, 41, 166);
+}
+
+.upDownKeys {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+}
+.leftRightKeys {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+.scoreBox {
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    color: white;
+}
+
+
+#restartBtn {
+    padding: 12px;
+    border: none;
+    background-color: #51E1ED;
+    font-size: 20px;
+    border-radius: 4px;
+    box-shadow: 1px 2px 8px rgba(0, 72, 0, 0.4);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 840px) {
+    .leftRightKeys {
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .upDownKeys {
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+#msgBox {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4DD637;
+    box-shadow: 0px 0px 8px 1px grey;
+    padding: 14px;
+}
+
+#msgBox p {
+    color: #242B2E;
+    font-size: 24px;
     text-align: center;
 }
-
+#msgBox button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #E21717;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
